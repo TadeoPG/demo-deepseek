@@ -30,7 +30,6 @@ Desarrollar un backend funcional que reciba un nombre de producto, genere una de
 
 ### Notas:
 
-- Si no puedes usar Deepseek directamente, puedes simular su respuesta con un generador local o datos ficticios. (_Afectará tu puntaje_)
 - Puedes usar base de datos en memoria (como H2, SQLite, Map, etc.) si lo prefieres.
 - Usar conventional commits que describa el timeline de tu desarrollo.
 - Puedes usar el lenguaje y stack backend de tu elección.
