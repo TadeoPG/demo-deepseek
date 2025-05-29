@@ -73,6 +73,22 @@ const req = https.request(options, (res) => {
   });
 });
 
+
+module.exports = openai;
+
+// pront que se le envia mediante peticion
+      //   { 
+      //   "model" : "deepseek-chat" , 
+      //   "messages" : [ 
+      //     { "role" : "system" , "content" : "Eres un asistente útil." }, 
+      //     { "role" : "user" , "content" : "Dime las caracteristicas de el producto Teclado para llenar en su base de datos, las columnas categoria, descripcion, color y precio" } 
+      //   ], 
+      //   "stream" : false
+      //  }
+
+
+
+
 // let postData = JSON.stringify({
 //   "messages": [
 //     {
