@@ -1,5 +1,5 @@
 require('dotenv').config();
-import OpenAI from "openai";
+const openai = require("openai");
 const PORT= process.env.PORT|| 4000; 
 
 const express= require('express');
@@ -25,8 +25,6 @@ app.get('/', (req, res) => {
 
 //RUTAS
 app.use('/api', apiRoutes);
-
-
 
 
 //Escuchar

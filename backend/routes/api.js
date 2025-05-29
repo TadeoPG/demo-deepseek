@@ -1,19 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { callDeepseek } = require('../controllers/deepseekController');
 const registroController=require('../controllers/registroController');
-
-
-// router.post('/story', async (req, res) => {
-//   try {
-//     const { messages } = req.body;
-//     const result = await callDeepseek(messages);
-//     res.json(result);
-//   } catch (error) {
-//     console.error('Story error:', error.message);
-//     res.status(500).json({ error: 'Error generando cuento con Deepseek.' });
-//   }
-// });
 
 
 router.post('/registrar-producto', async (req, res) => {
