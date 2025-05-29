@@ -6,7 +6,7 @@ export class ProductService{
 
         const openai = new OpenAI({
             baseURL: 'https://api.deepseek.com',
-            apiKey: 'sk-06f74b93ec39436694cf75b735196cb0'
+            apiKey: process.env.DEEP_KEY || 'sk-06f74b93ec39436694cf75b735196cb0'
         });
 
         const completion = await openai.chat.completions.create({
