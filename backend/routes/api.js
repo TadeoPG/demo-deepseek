@@ -19,13 +19,10 @@ router.post('/registrar-producto', async (req, res) => {
   }
 });
 
-
-
 router.get('/leer', async (req, res) => {
   try {
-    
-
     res.json(result);
+
   } catch (error) {
 
     

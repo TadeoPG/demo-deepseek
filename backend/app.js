@@ -5,7 +5,7 @@ const PORT= process.env.PORT|| 4000;
 const express= require('express');
 const cors= require('cors');
 const apiRoutes=require('./routes/api')
-const sqlite = require('sqlite');
+const sqlite = require('node:sqlite');
 
 const app= express();
 

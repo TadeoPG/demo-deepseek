@@ -23,10 +23,9 @@ function registroController(req,res){
     key INTEGER PRIMARY KEY,
     nombre TEXT,
     descripction TEXT
-    ) ;
-    INSERT INTO productos VALUES (${nombre_prod},${descripcion});
+    ) ; `);
     
-   `);
+    database.prepare(`INSERT into productos VALUES(${nombre}, ${descripcion})`)
 
 
     return descripcion;
