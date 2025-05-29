@@ -1,8 +1,30 @@
-import pool from "db.js";
+const mysql = require("mysql2");
+
+app.use(express.json()); // Middleware para procesar JSON
+app.use(express.urlencoded({ extended: true })); // Middleware para procesar formularios
+
+const connection = mysql.createConnection({
+  host: "localhost",
+  user: "root",
+  database: "db_test",
+  port: "3306",
+});
 
 // Agregar un nuevo producto
-
-
+export const agregarProducto = async ({
+  nombre_producto,
+  categoria_producto,
+  venta_producto,
+}) => {
+  try {
+    await pool.query(
+      "INSERT INTO producto (nombre_producto, categoria_producto, venta_producto, created_at) VALUES (?, ?, ?, ?)",
+      [nombre_producto, categoria_producto, venta_producto, new Date()]
+    );
+  } catch (error) {
+    throw { status: 500, message: "Error al crear el producto" };
+  }
+};
 // Obtener todos los producto
 export const listarproducto = async () => {
   try {
