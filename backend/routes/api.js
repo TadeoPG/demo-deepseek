@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const registroController=require('../controllers/registroController');
+const  { callDeepseek }  = require('../controllers/registroController');
 
 
 router.post('/registrar-producto', async (req, res) => {
   try {    
-    const nombre = req.body;
+    const { nombre } = req.body;
     console.log('Nombre ', nombre);
-    const respuesta = registroController(nombre);
+    const respuesta = callDeepseek(nombre);
 
-    res.json(result);
+    res.json(respuesta);
 
   } catch (error) {
 
@@ -17,8 +17,6 @@ router.post('/registrar-producto', async (req, res) => {
     res.status(500).json({ error: 'Error en registro' });
   }
 });
-
-
 
 
 

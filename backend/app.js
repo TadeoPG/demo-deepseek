@@ -17,6 +17,7 @@ const baseDir = path.resolve(__dirname, '..');
 const frontendDir = path.join(baseDir, 'frontend');
 
 app.use(express.static(frontendDir));
+
 // Ruta principal que envía el HTML
 app.get('/', (req, res) => {
   res.sendFile(path.join(frontendDir, 'index.html'));

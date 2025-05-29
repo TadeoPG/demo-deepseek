@@ -1,4 +1,5 @@
-const Producto = require('../models/Producto')
+const OpenAI = require("openai");
+
 
 function callDeepseek(nombre_producto) {
     const completion = openai.chat.completions.create({
@@ -25,8 +26,6 @@ const openai = new OpenAI({
 });
 
 
-
-
 module.export= {
-    registroController
+    registroController, callDeepseek
 }
