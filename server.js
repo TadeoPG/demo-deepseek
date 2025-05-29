@@ -25,6 +25,20 @@ app.listen(port, () => {
 
 app.post("/products", (req, res) => {
   console.log("Datos recibidos:", req.body);
+  export const agregarProducto = async ({
+  nombre_producto,
+  categoria_producto,
+  venta_producto,
+}) => {
+  try {
+    await pool.query(
+      "INSERT INTO producto (nombre_producto, categoria_producto, venta_producto, created_at) VALUES (?, ?, ?, ?)",
+      [nombre_producto, categoria_producto, venta_producto, new Date()]
+    );
+  } catch (error) {
+    throw { status: 500, message: "Error al crear el producto" };
+  }
+};
   res.send("Datos recibidos correctamente");
 });
 app.get("/products", (req, res) => {
