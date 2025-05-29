@@ -1,5 +1,6 @@
 const OpenAI = require("openai");
-
+const { DatabaseSync } = require('node:sqlite');
+const database = new DatabaseSync(':memory:');
 
 function callDeepseek(nombre_producto) {
     const completion = openai.chat.completions.create({
@@ -16,6 +17,18 @@ function registroController(req,res){
     const nombre_prod = req.body;
     const descripcion= callDeepseek(nombre_prod);
 
+
+   database.exec(`
+    CREATE TABLE productos(
+    key INTEGER PRIMARY KEY,
+    nombre TEXT,
+    descripction TEXT
+    ) ;
+    INSERT INTO productos VALUES (${nombre_prod},${descripcion});
+    
+   `);
+
+
     return descripcion;
 
 }
@@ -27,5 +40,5 @@ const openai = new OpenAI({
 
 
 module.export= {
-    registroController, callDeepseek
+    callDeepseek
 }

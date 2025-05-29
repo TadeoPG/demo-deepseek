@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const  { callDeepseek }  = require('../controllers/registroController');
-
+const { DatabaseSync } = require('node:sqlite');
+const database = new DatabaseSync(':memory:');
 
 router.post('/registrar-producto', async (req, res) => {
   try {    
